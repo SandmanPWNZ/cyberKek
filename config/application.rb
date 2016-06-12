@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Cyberino
   class Application < Rails::Application
 
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
 
     config.generators do |g|
       g.template_engine :slim

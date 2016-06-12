@@ -15,3 +15,55 @@
  */
 @import 'bootstrap';
 @import 'bootstrap-sprockets';
+// MIXINS
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+// Common styles
+header a, footer a{
+  color: #ffe400;
+}
+.container{
+  background-color: #17141F;
+  // margin-top: 40px;
+}
+// header
+header{
+    background-color: #17141F;
+    height: 40px;
+}
+#header-nav, #footer-nav{
+  display: inline-block;
+}
+#sign-in{
+  float: right;
+}
+
+// footer
+footer{
+  position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    background-color: #17141F;
+    text-align: center;
+}
+// Login & Registration page
+.log-in-page, .reg-page{
+  text-align: center;
+  margin: 0 auto;
+  width: 320px;
+  #error_explanation{
+    border: 1px solid #ebccd1;
+    background-color: #f2dede;
+    @include border-radius(4px);
+    color: #a94442;
+  }
+  .actions input{
+    margin-right: 10px;
+  }
+}
