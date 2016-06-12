@@ -9,6 +9,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'slim-rails'
 gem 'challonge-api'
+gem 'mini_portile2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
