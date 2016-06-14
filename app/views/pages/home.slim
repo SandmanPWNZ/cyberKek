@@ -1,2 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+.streams-bg
+  .container
+    .top-streams.box-shadow
+      ul.nav.nav-tabs.stream-navbar
+        li.active
+          a onclick="openStream('our_stream')"  Наш стрим
+        li
+          a onclick="openStream('partners_stream')"  Стримы партнеров
+      #our_stream.stream-tab.clearfix
+        .col-md-8.stream-flow
+            iframe frameborder="0" height="378" scrolling="no" src="https://player.twitch.tv/?channel=sandmanpwnz&autoplay=false"
+            a href="https://www.twitch.tv/sandmanpwnz?tt_medium=live_embed&tt_content=text_link" style=("padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;")
+        .col-md-4.stream-chat
+            iframe frameborder="0" height="378" scrolling="no" src="https://www.twitch.tv/sandmanpwnz/chat?popout="
+main.container
+  .col-md-8
+    == render 'news/index'
+  .col-md-4.sidebar.box-shadow
+      h3 Наша группа вКонтакте:
+      #vk_groups
+      javascript:
+        VK.Widgets.Group("vk_groups", {mode: 0, width: "350", height: "400", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 104644605);

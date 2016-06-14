@@ -1,0 +1,55 @@
+// Place all the styles related to the News controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'mixin.scss';
+// HOME PAGE NEWS
+main{
+  padding: 25px 10px 0;
+  background: #fff;
+  .news-item{
+    text-align: center;
+    min-width: 200px;
+    max-width: 215px;
+    margin-bottom: 25px;
+    padding: 7px;
+    background: #f4f5f9;
+    display: inline-block;
+    margin-right: 25px;
+    vertical-align: top;
+    .news-item-img-wrap{
+      // padding: 10px;
+    }
+    .news-desc{
+      float: left;
+    }
+  }
+}
+// NEWS SINGLE
+.news-page{
+  background: #f4f5f9;
+  margin-top: 40px;
+  .news-page-img{
+    float: right;
+    margin: 0 0 15px 15px;
+  }
+  .news-page-content{
+
+  }
+  .news-page-publ{
+    font-size: 18px;
+    margin-top: 30px;
+  }
+}
+// ALL NEWS
+.news-list-page{
+  margin-top: 40px;
+  background: #f4f5f9;
+  .news-item{
+    min-height: 150px;
+  }
+}
+
+// EDIT
+#news_content{
+  height: 500px;
+}

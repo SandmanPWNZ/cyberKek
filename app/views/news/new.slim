@@ -1,0 +1,9 @@
+.container
+  .col-md-8
+    h1 Создать новость
+    = simple_form_for @news do |f|
+      =f.input :title
+      =f.input :content
+      =f.input :news_img
+
+      =f.submit

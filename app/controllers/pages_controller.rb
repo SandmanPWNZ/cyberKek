@@ -1,16 +1,7 @@
 class PagesController < ApplicationController
+
   def home
+    @news = News.all
   end
 
-  def graph
-  end
-
-  def help
-  end
-
-  def about
-  end
-
-  def contacts
-  end
 end

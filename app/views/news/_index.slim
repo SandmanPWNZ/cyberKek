@@ -1,0 +1,5 @@
+- @news.each do |n|
+  .news-item.clearfix.box-shadow
+    .news-item-img-wrap = image_tag n.news_img.url(:small)
+    h3.news-title = link_to n.title, n
+end

@@ -1,3 +1,41 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'mixin.scss';
+
+// Login & Registration page
+#error_explanation{
+  border: 1px solid #ebccd1;
+  background-color: #f2dede;
+  @include border-radius(4px);
+  color: #a94442;
+}
+.login-page, .reg-page{
+  margin-top: 40px;
+  text-align: center;
+
+  .actions a{
+    margin-right:25px;
+  }
+}
+// Home content
+.streams-bg{
+  background: url('../images/esl-bg.jpg');
+  background-size: cover;
+}
+.top-streams{
+  height: 450px;
+  background-color: #fff;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.stream-flow iframe, .stream-chat iframe{
+  width: 100%;
+  height: 378px;
+}
+.stream-tab{
+  margin-top: 15px;
+}
+// Home sidebar
+.sidebar{
+  background: #f4f5f9;
+  text-align: center;
+  padding-bottom: 20px;
+}

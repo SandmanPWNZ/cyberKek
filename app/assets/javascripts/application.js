@@ -14,3 +14,29 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+function openStream(streamName) {
+      $("div.stream-tab").css({
+        display: 'none'
+      });
+      document.getElementById(streamName).style.display = "block";
+
+  };
+
+function openNews(newsTopic) {
+    $("div.news-tab").css({
+      display: 'none'
+    });
+    document.getElementById(newsTopic).style.display = "block";
+  }
+// STREAM NAV TABS
+jQuery(document).ready(function() { //Initialize
+
+  $(".stream-navbar li" ).click(function() {
+    $(".stream-navbar li").removeClass('active')
+    $(this).addClass('active');
+  });
+// STREAM NAV BAR
+  openStream("our_stream")
+  openNews("all")
+
+});
