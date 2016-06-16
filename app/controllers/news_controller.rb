@@ -7,7 +7,7 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def show
-    @comments = Comments.where(:news_id => @news)
+    @comments = Comment.where(:news_id => @news)
   end
 
   def new

@@ -3,7 +3,7 @@ before_action :authenticate_user!
 
   def create
     @news = News.find(params[:news_id])
-    @comment = Comment.create(params[:comment].premit[:comment])
+    @comment = Comment.create(params[:comment].permit[:content])
     @comment.user_id = current_user.id
     @comment.news_id = @news.id
 

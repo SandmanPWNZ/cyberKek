@@ -37,15 +37,18 @@ main{
   }
   .news-page-publ{
     font-size: 18px;
-    margin-top: 30px;
+    margin-top: 10px;
   }
 }
 // ALL NEWS
 .news-list-page{
   margin-top: 40px;
-  background: #f4f5f9;
+  padding-bottom: 40px;
   .news-item{
     min-height: 150px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #f4f5f9;
   }
 }
 

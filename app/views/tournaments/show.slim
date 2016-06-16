@@ -1,0 +1,20 @@
+.container
+  .col-md-8.col-md-offset-2.box-shadow.tournament-grid
+    h2.text-center = @tournament.title
+    .teams
+      .first-round
+        .pair#pair1
+          p = @teams_array.first.first
+          p = @teams_array.first.second
+        .pair#pair2
+          p = @teams_array.second.first
+          p = @teams_array.second.second
+        .pair#pair3
+          p = @teams_array.third.first
+          p = @teams_array.third.second
+        .pair#pair4
+          p = @teams_array.fourth.first
+          p = @teams_array.fourth.second
+    = link_to 'Редактировать', edit_tournament_path(@tournament), class: 'btn btn-primary'
+    = link_to 'Удалить', tournaments_path(@tournament), class: 'btn btn-primary', method: :delete, data: {confirm:'Вы уверены, что хотите удалить новость?'}
+    = link_to 'Вернуться', tournaments_path, class: 'btn btn-primary'

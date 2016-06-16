@@ -15,10 +15,12 @@ Rails.application.routes.draw do
     get 'contacts' => 'pages#contacts'
 
   resources :news do
-
-    get 'news' => 'news#index'
-
     resources :comments
+
+  end
+
+  resources :tournaments do
+    resources :team
 
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,9 +1,12 @@
+= provide(:title, 'Новости')
 .container
   .col-md-8.col-md-offset-2.news-list-page.box-shadow
-    = link_to 'Создать новость', new_news_path
     - @news.each do |n|
       .news-item.clearfix
         h3.news-title = link_to n.title, n
-        .news-img.pull-right = image_tag n.news_img.url(:thumb)
+        .news-img.pull-right = image_tag n.news_img.url(:small)
         p.news-content = n.content
+    end
+    -if user_signed_in?
+      = link_to 'Создать новость', new_news_path, class:'btn btn-primary'
     end
