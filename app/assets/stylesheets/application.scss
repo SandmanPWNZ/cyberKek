@@ -72,13 +72,25 @@ footer{
     color: #000;
   }
 }
-
+.inner-page{
+  margin-top: 40px;
+  padding-bottom: 40px;
+  background: #f4f5f9;
+}
 
 @media screen and (max-width: 990px){
   .top-streams{
     width: inherit;
     height: 100%;
   }
+}
+
+@media screen and (min-width: 992px){
+  #vk-groups{
+    width: 283px !important;
+  }
+}
+@media screen and (min-width: 768px){
 }
 // @import 'news.scss';
 // @import 'pages.scss';

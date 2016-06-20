@@ -6,13 +6,8 @@ Rails.application.routes.draw do
 
     root 'pages#home'
 
-    get 'graph' => 'pages#graph'
+    get '/admin' => 'pages#admin'
 
-    get 'help' => 'pages#help'
-
-    get 'about' => 'pages#about'
-
-    get 'contacts' => 'pages#contacts'
 
   resources :news do
     resources :comments
@@ -22,6 +17,10 @@ Rails.application.routes.draw do
   resources :tournaments do
     resources :team
 
+  end
+
+  resources :teams do
+    resources :players
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

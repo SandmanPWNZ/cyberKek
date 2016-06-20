@@ -9,4 +9,8 @@ module ApplicationHelper
     end
   end
 
+  def randomized_background_image
+    images = ["/images/esl-bg2.jpg", "/images/esl-bg.jpg", "/images/esl-bg3.jpg"]
+    images[rand(images.size)]
+  end
 end

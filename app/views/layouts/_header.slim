@@ -3,8 +3,9 @@ header.clearfix.box-shadow
     nav
       ul.nav.navbar-nav#header-nav
         li = link_to 'Главная', root_path
-        li = link_to 'Турниры', tournaments_path
         li = link_to 'Новости', news_index_path
+        li = link_to 'Турниры', tournaments_path
+        li = link_to 'Команды', teams_path
       ul.nav.navbar-nav#sign-in
         -if user_signed_in?
           li = link_to current_user.username, edit_user_registration_path

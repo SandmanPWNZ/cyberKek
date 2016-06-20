@@ -1,0 +1,11 @@
+.container
+  .col-md-8.col-md-offset-2.box-shadow.inner-page
+    h1 Создать турнир
+    = simple_form_for @team do |f|
+      = f.input :name, label: 'Название команды'
+      = f.input :discipline, as: :select, collection: ['DotA 2', 'Counter-Strike:GO'], selected: 'DotA 2', label: 'Выберите игру'
+      = f.input :players, label: 'Список игроков'
+      = f.input :won, as: :integer
+      = f.input :team_logo, label: 'Лого команды', class:'btn btn-primary'
+      = f.submit value:'Создать', class: 'btn btn-primary center-block'
+      = link_to 'Отмена', teams_path, class: 'btn btn-primary cancel'

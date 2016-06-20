@@ -1,7 +1,10 @@
 .container
-  .col-md-8.col-md-offset-2.box-shadow
+  .col-md-8.col-md-offset-2.box-shadow.inner-page
     h1 Редактировать турнир
     = simple_form_for @tournament do |f|
-      = f.input :title
-      = f.input :team
-      = f.submit
+      = f.input :title, label: 'Название турнира'
+      = f.input :team, label: 'Список команд'
+      = f.input :game, as: :select, collection: ['DotA 2', 'Counter-Strike: GO'], selected: 'DotA 2', label: 'Выберите игру'
+      = f.input :date_of, as: :datetime, label: 'Начало турнира'
+      = f.input :size_of, as: :select, collection: [8,16],selected: 8, label: 'Количество команд'
+      = f.submit value:'Изменить', class: 'btn btn-primary center-block'

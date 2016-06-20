@@ -33,11 +33,15 @@ before_action :authenticate_user!, except: [:index, :show]
     end
   end
 
+  def destroy
+    @tournament.destroy
+    redirect_to tournaments_path
+  end
   private
     def find_tournament
       @tournament = Tournament.find(params[:id])
     end
     def tournament_params
-      params.require(:tournament).permit(:title, :team)
+      params.require(:tournament).permit(:title, :team, :size_of, :game, :date_of)
     end
 end

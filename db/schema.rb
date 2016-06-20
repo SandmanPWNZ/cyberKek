@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616012815) do
+ActiveRecord::Schema.define(version: 20160620160745) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -20,9 +20,6 @@ ActiveRecord::Schema.define(version: 20160616012815) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "comments", ["news_id"], name: "index_comments_on_news_id"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "news", force: :cascade do |t|
     t.string   "title"
@@ -36,12 +33,20 @@ ActiveRecord::Schema.define(version: 20160616012815) do
     t.datetime "news_img_updated_at"
   end
 
+  create_table "players", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.text     "players"
     t.integer  "tournament_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "team_logo"
+    t.string   "won"
+    t.string   "discipline"
   end
 
   add_index "teams", ["tournament_id"], name: "index_teams_on_tournament_id"
@@ -51,6 +56,9 @@ ActiveRecord::Schema.define(version: 20160616012815) do
     t.text     "team"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "size_of"
+    t.string   "game"
+    t.datetime "date_of"
   end
 
   create_table "users", force: :cascade do |t|

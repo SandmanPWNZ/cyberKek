@@ -3,7 +3,7 @@
     h1 Редактировать новость
     = simple_form_for @news do |f|
       =f.input :title
-      =f.input :content
+      =f.input :content,  as: :text
       =f.input :news_img
 
       =f.submit

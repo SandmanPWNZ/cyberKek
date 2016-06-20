@@ -14,7 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+jQuery(document).ready(function() { //Initialize
+
+  $(".stream-navbar li" ).click(function() {
+    $(".stream-navbar li").removeClass('active')
+    $(this).addClass('active');
+  });
+// STREAM NAV BAR
+  openStream("our_stream")
+  openNews("all")
+
+});
+
 function openStream(streamName) {
+      $(this).parent('li').addClass('active')
       $("div.stream-tab").css({
         display: 'none'
       });
@@ -29,14 +42,3 @@ function openNews(newsTopic) {
     document.getElementById(newsTopic).style.display = "block";
   }
 // STREAM NAV TABS
-jQuery(document).ready(function() { //Initialize
-
-  $(".stream-navbar li" ).click(function() {
-    $(".stream-navbar li").removeClass('active')
-    $(this).addClass('active');
-  });
-// STREAM NAV BAR
-  openStream("our_stream")
-  openNews("all")
-
-});

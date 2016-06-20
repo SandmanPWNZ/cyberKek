@@ -1,0 +1,27 @@
+.round#round1
+  p.round-title Round 1
+  .pair#pair1
+    p.team.winner = @teams_array.first.first
+    p.team = @teams_array.first.second
+  .pair#pair2
+    p.team = @teams_array.second.first
+    p.team.winner = @teams_array.second.second
+  .pair#pair3
+    p.team = @teams_array.third.first
+    p.team.winner = @teams_array.third.second
+  .pair#pair4
+    p.team.winner = @teams_array.fourth.first
+    p.team = @teams_array.fourth.second
+.round#round2
+  p.round-title Round 2
+  .pair#pair1
+    p.team.winner = @teams_array.first.first
+    p.team = @teams_array.second.second
+  .pair#pair2
+    p.team.winner = @teams_array.third.second
+    p.team = @teams_array.fourth.first
+.round#round3
+  p.round-title Round 3
+  .pair#pair1
+    p.team.winner = @teams_array.first.first
+    p.team = @teams_array.third.second

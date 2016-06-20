@@ -1,0 +1,20 @@
+.container
+  .col-md-8.col-md-offset-2.inner-page
+    -if current_user.username = 'sandmanpwnz'
+      h2.text-center Страница создания
+      .champs-actions
+        h3 Турниры
+        = link_to 'Создать турнир', new_tournament_path, class: 'btn btn-primary ', style: 'width:' '250px'
+        = link_to 'Список турниров', tournaments_path, class: 'btn btn-primary ', style: 'width:' '250px'
+      .news-actions
+        h3 Новости
+        = link_to 'Создать Новости', new_news_path, class: 'btn btn-primary center-block', style: 'width:' '250px'
+        = link_to 'Список Новости', news_index_path, class: 'btn btn-primary center-block', style: 'width:' '250px'
+      .teams-actions
+        h3 Команды
+        = link_to 'Создать Команды', new_team_path, class: 'btn btn-primary center-block', style: 'width:' '250px'
+        = link_to 'Список Команды', teams_path, class: 'btn btn-primary center-block', style: 'width:' '250px'
+      .players-actions
+        h3 Игроки
+        = link_to 'Создать турнир', new_tournament_path, class: 'btn btn-primary center-block', style: 'width:' '250px'
+        = link_to 'Список турниров', tournaments_path, class: 'btn btn-primary center-block', style: 'width:' '250px'

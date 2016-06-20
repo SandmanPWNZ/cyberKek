@@ -1,0 +1,18 @@
+= provide(:title, 'Команды')
+.teams-bg
+  .container
+    .col-md-8.col-md-offset-2.inner-page
+      h3.text-center Команды
+      table.table.table-hover
+        thead
+          tr
+            th #
+            th Команда
+            th Побед
+            th Дисциплина
+        -@teams.each_with_index do |t, i|
+          tr
+            td = i+1
+            td =link_to t.name, t
+            td = t.wom
+            td = t.discipline

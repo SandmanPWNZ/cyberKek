@@ -1,17 +1,26 @@
-.container
-  .col-md-8.col-md-offset-2.box-shadow.tournaments-home-page
-    h2.text-center Активные турниры:
-    - @tournaments.each do |t|
-      .tournament-item.clearfix
-        h3 = link_to t.title, t
-        span.pull-right = t.team.split(' ').count
-    -if user_signed_in?
-      = link_to 'Создать турнир', new_tournament_path, class: 'btn btn-primary'
-
-
-
-
-/ =simple_form_for teams do |f|
-/   =f.input :title
-/   =f.input :teams
-/   =f.submit
+= provide(:title, 'Турниры')
+.tournaments-bg
+  .container
+    .col-md-8.col-md-offset-2.box-shadow.tournaments-home-page.inner-page
+      h2.text-center Активные турниры
+      table.table.table-hover
+        thead
+          tr
+            th #
+            th Название турнира
+            th Игра
+            th Число команд
+        tbody
+          - @tournaments.each_with_index do |t , index|
+                tr
+                  td = index+1
+                  -if (t.team.split(' ').count) == (t.size_of)
+                    td =link_to t.title, t
+                  -else
+                    td t.title
+                  end
+                  -if (t.game) == 'DotA 2'
+                    td.tour-game-dota = t.game
+                  -else
+                    td.tour-game-cs = t.game
+                  td #{t.team.split(' ').count}/#{t.size_of}

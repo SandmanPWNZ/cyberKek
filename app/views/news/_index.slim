@@ -1,5 +1,7 @@
 - @news.each do |n|
-  .news-item.clearfix.box-shadow
-    .news-item-img-wrap = image_tag n.news_img.url(:small)
-    h3.news-title = link_to n.title, n
+  .col-sm-6.col-md-6.col-xs-6.clearfix.news-item-home
+    = link_to n do
+      = image_tag n.news_img.url(:medium), class: 'img-responsive'
+      h3.news-title #{n.title}
+    end
 end

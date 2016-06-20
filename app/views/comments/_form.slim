@@ -1,4 +1,4 @@
 =simple_form_for ([@news, @news.comments.build]) do |f|
   .form-group
-    = f.input :content
+    = f.input :content, as: :text
     = f.button :submit, class: 'btn btn-primary', value: 'Коментировать'

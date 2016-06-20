@@ -1,18 +1,21 @@
 .container
-  .col-md-8.col-md-offset-2.news-page.box-shadow.clearfix
-    h2.col-sm-8 = @news.title
-    p.news-page-publ.col-sm-4 Опубликовал: #{@news.user.username}
-    .news-page-img = image_tag @news.news_img.url(:medium)
-    p.news-page-content = @news.content
-    #comments-section
-      -if user_signed_in?
+  .col-md-8.col-md-offset-2.news-page.box-shadow.clearfix.inner-page
+    .news-show.clearfix
+      h3.col-sm-8 = @news.title
+      p.news-page-publ.col-sm-4 Опубликовал: #{@news.user.username}
+      .news-page-img = image_tag @news.news_img.url(:medium)
+      p.news-page-content = @news.content.html_safe
+      -if user_signed_in? && current_user.username = 'sandmanpwnz'
         = link_to 'Редактировать', edit_news_path(@news), class: 'btn btn-primary'
         = link_to 'Удалить', news_path(@news), class: 'btn btn-primary', method: :delete, data: {confirm:'Вы уверены, что хотите удалить новость?'}
+    #comments-section
+      -if user_signed_in?
         h3 = pluralize(@news.comments.count, 'Comment')
-        - @comments.each do |comment|
-          .comment
-            p = comment.user.username
-            p = comment.content.to_s
+        - @comments.each do |c|
+          .comment.clearfix
+            p #{c.user.username} прокомментировал:
+            p.text-muted = c.content
+            = link_to 'Удалить', news_comment_path(@news, c),method: :delete, data: {confirm: 'Удалить коментарий?'}, class:'pull-right'
       -else
         p Войдите, что бы видеть коментарии.
       end
